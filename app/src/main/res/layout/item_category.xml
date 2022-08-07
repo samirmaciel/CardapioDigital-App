@@ -17,8 +17,9 @@
         android:id="@+id/txt_CategoryName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/hint"
         android:layout_marginTop="12dp"
-        android:text="Combo"/>
+        android:fontFamily="@font/robotoregular"
+        android:text="Combo"
+        android:textColor="@color/white" />
 
 </LinearLayout>

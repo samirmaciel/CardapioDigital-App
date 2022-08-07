@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="main_dark">#FF121013</color>
-    <color name="gray_light">#FF232122</color>
+    <color name="gray_light">#5E5A5C</color>
     <color name="gray_dark">#FF1C1C1C</color>
+    <color name="card_bg">#FF232222</color>
     <color name="hint">#8C8888</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>

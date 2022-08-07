@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="300">
+       <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@+id/rv_categories"
+               motion:framePosition="0"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/edt_search"
+               motion:framePosition="40"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/btn_HomeCart"
+               motion:framePosition="0"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/btn_HomeCart"
+               motion:framePosition="40"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/rv_categories"
+               motion:framePosition="0"
+               android:alpha="0.5" />
+           <KeyAttribute
+               motion:motionTarget="@+id/edt_search"
+               motion:framePosition="0"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/rv_categories"
+               motion:framePosition="40"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/rv_products"
+               motion:framePosition="0"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/rv_products"
+               motion:framePosition="40"
+               android:alpha="0" />
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/edt_search"
+            motion:layout_constraintEnd_toStartOf="@id/btn_HomeCart"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintHorizontal_bias="0.0"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:translationY="-100dp" />
+        <Constraint
+            android:id="@+id/btn_HomeCart"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="16dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp"
+            android:translationY="-100dp" />
+        <Constraint
+            android:id="@+id/rv_categories"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            motion:layout_constraintTop_toBottomOf="@id/edt_search"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:translationX="-1300dp" />
+        <Constraint
+            android:id="@+id/rv_products"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/rv_categories"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:translationY="600dp" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+    </ConstraintSet>
+</MotionScene>
