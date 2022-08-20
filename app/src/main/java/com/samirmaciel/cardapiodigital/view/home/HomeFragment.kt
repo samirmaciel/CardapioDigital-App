@@ -31,13 +31,12 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         setupBinding(view)
         setupViewModel()
         setupObservers()
-        mBinding?.mlHomeView?.transitionToEnd()
+
     }
 
     override fun onResume() {
         super.onResume()
-
-        mBinding?.mlHomeView?.transitionToState(2131231125)
+        mBinding?.mlHomeView?.transitionToEnd()
     }
 
     private fun setupViewModel(){

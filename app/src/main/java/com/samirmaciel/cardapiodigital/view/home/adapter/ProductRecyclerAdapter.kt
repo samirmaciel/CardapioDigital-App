@@ -41,6 +41,7 @@ class ProductRecyclerAdapter(val onAddItem : (Product) -> Unit) : RecyclerView.A
             image.setImageResource(itemList[position].image!!)
 
             btnAdd.setOnClickListener {
+                it.isEnabled = false
                 onAddItem(itemList[position])
             }
         }
