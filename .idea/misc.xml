@@ -10,12 +10,14 @@
         <entry key="..\:/Users/samir/AndroidStudioProjects/CardapioDigital/app/src/main/res/drawable/ic_cart_empty.xml" value="0.315" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/CardapioDigital/app/src/main/res/drawable/ic_cart_notification.xml" value="0.315" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/CardapioDigital/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/samir/AndroidStudioProjects/CardapioDigital/app/src/main/res/layout/fragment_cart.xml" value="0.271875" />
+        <entry key="..\:/Users/samir/AndroidStudioProjects/CardapioDigital/app/src/main/res/layout/fragment_cart.xml" value="0.33" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/CardapioDigital/app/src/main/res/layout/fragment_details.xml" value="0.14" />
+        <entry key="..\:/Users/samir/AndroidStudioProjects/CardapioDigital/app/src/main/res/layout/fragment_finalize_order.xml" value="0.25" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/CardapioDigital/app/src/main/res/layout/fragment_home.xml" value="0.2" />
-        <entry key="..\:/Users/samir/AndroidStudioProjects/CardapioDigital/app/src/main/res/layout/item_cart.xml" value="0.5" />
+        <entry key="..\:/Users/samir/AndroidStudioProjects/CardapioDigital/app/src/main/res/layout/item_cart.xml" value="0.33" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/CardapioDigital/app/src/main/res/layout/item_category.xml" value="0.67" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/CardapioDigital/app/src/main/res/layout/item_product.xml" value="0.67" />
+        <entry key="..\:/Users/samir/AndroidStudioProjects/CardapioDigital/app/src/main/res/layout/item_tableitem.xml" value="0.271875" />
       </map>
     </option>
   </component>

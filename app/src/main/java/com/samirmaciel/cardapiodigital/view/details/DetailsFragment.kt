@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.samirmaciel.cardapiodigital.R
 import com.samirmaciel.cardapiodigital.databinding.FragmentDetailsBinding
-import com.samirmaciel.cardapiodigital.domain.model.Product
+import com.samirmaciel.cardapiodigital.domain.model.TableItem
 import com.samirmaciel.cardapiodigital.view.details.viewModel.DetailsViewModel
 import com.samirmaciel.cardapiodigital.view.viewModel.SharedViewModel
 
@@ -23,14 +23,11 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         setupBinding(view)
         setupViewModel()
         setupObservers()
+        setupListeners()
 
         mBinding?.mlDetailsView?.transitionToEnd()
     }
 
-    override fun onResume() {
-        super.onResume()
-        setupListeners()
-    }
 
     private fun setupListeners() {
         mBinding?.btnAdd?.setOnClickListener {
@@ -42,32 +39,34 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         }
 
         mBinding?.btnDetailsConfirm?.setOnClickListener {
-            goToHome(it)
         }
     }
 
     private fun setupObservers() {
-        mSharedViewModel?.selectedProduct?.observe(viewLifecycleOwner){ selectedProduct ->
-            setupProduct(selectedProduct)
-        }
 
-        mViewModel?.totalAmount?.observe(viewLifecycleOwner){
-
-            mBinding?.btnRemove?.isEnabled = it != 0
-
-            mBinding?.txtDetailsAmount?.text = it.toString()
+        mViewModel?.totalAmount?.observe(viewLifecycleOwner){ amount ->
+            onChangeTableItemTotalAmount(amount)
         }
     }
 
-    private fun setupProduct(selectedProduct: Product) {
-        mBinding?.ivDetailsImage?.setImageResource(selectedProduct.image!!)
-        mBinding?.txtProductName?.text = selectedProduct.name
-        mBinding?.txtProductDescription?.text = selectedProduct.description
-        mBinding?.txtProductPrice?.text = selectedProduct.price
+    private fun onChangeTableItemTotalAmount(amount: Int){
+
+    }
+
+//    private fun getTableItem(): TableItem{
+//     return TableItem()
+//    }
+
+    private fun setupTableItem(tableItem: TableItem) {
+        mBinding?.ivDetailsImage?.setImageResource(tableItem.product.image!!)
+        mBinding?.txtProductName?.text = tableItem.product.name
+        mBinding?.txtProductDescription?.text = tableItem.product.description
+        mBinding?.txtDetailsAmount?.text = tableItem.totalAmountSelected.toString()
+        mBinding?.txtProductPrice?.text = tableItem.product.price
     }
 
     private fun setupViewModel() {
-        mSharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
+        mSharedViewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
         mViewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
     }
 
@@ -80,37 +79,4 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         mBinding = null
     }
 
-    private fun goToHome(view: View){
-        view.isEnabled = false
-        mBinding?.mlDetailsView?.transitionToStart()
-        mBinding?.mlDetailsView?.addTransitionListener(object : MotionLayout.TransitionListener{
-            override fun onTransitionStarted(
-                motionLayout: MotionLayout?,
-                startId: Int,
-                endId: Int
-            ) {
-            }
-
-            override fun onTransitionChange(
-                motionLayout: MotionLayout?,
-                startId: Int,
-                endId: Int,
-                progress: Float
-            ) {
-            }
-
-            override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
-                findNavController().navigate(R.id.action_detailsFragment_to_homeFragment)
-            }
-
-            override fun onTransitionTrigger(
-                motionLayout: MotionLayout?,
-                triggerId: Int,
-                positive: Boolean,
-                progress: Float
-            ) {
-            }
-
-        })
-    }
 }

@@ -11,16 +11,28 @@
         tools:layout="@layout/fragment_home"
         android:label="HomeFragment" >
         <action
-            android:id="@+id/action_homeFragment_to_detailsFragment"
-            app:destination="@id/detailsFragment" />
+            android:id="@+id/action_homeFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_finalizeOrderFragment"
+            app:destination="@id/finalizeOrderFragment" />
     </fragment>
     <fragment
-        android:id="@+id/detailsFragment"
-        android:name="com.samirmaciel.cardapiodigital.view.details.DetailsFragment"
-        android:label="DetailsFragment"
-        tools:layout="@layout/fragment_details">
+        android:id="@+id/cartFragment"
+        android:name="com.samirmaciel.cardapiodigital.view.cart.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" >
         <action
-            android:id="@+id/action_detailsFragment_to_homeFragment"
+            android:id="@+id/action_cartFragment_to_finalizeOrderFragment"
+            app:destination="@id/finalizeOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finalizeOrderFragment"
+        android:name="com.samirmaciel.cardapiodigital.view.finalizeOrder.FinalizeOrderFragment"
+        android:label="fragment_finalize_order"
+        tools:layout="@layout/fragment_finalize_order" >
+        <action
+            android:id="@+id/action_finalizeOrderFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>
